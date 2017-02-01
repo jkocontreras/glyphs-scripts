@@ -1,2 +1,2 @@
 # glyphs-scripts
-really simple srcipts
+really simple scripts
