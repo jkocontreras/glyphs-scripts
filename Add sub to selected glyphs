@@ -1,0 +1,6 @@
+# print names in selected glyphs + sub
+
+select = Glyphs.font.selectedLayers
+
+for lista in select:
+    print lista.parent.name +'_sub'
