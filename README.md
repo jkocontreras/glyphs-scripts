@@ -1,2 +1,3 @@
 # glyphs-scripts
-really simple scripts
+
+This are really basic scripts for Glyphs.
