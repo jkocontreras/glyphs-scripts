@@ -1,0 +1,58 @@
+{
+    classes =     (
+                {
+            code = "A\nB\nC \nD \nE \nF \nG \nH \nI \nJ \nK \nL \nM \nN \nO \nP \nQ \nR \nS \nT \nU \nV \nW \nX \nY \nZ";
+            name = randomCycle1;
+        },
+                {
+            code = "A.ss01 \nB.ss01 \nC.ss01 \nD.ss01 \nE.ss01 \nF.ss01 \nG.ss01 \nH.ss01 \nI.ss01 \nJ.ss01 \nK.ss01 \nL.ss01 \nM.ss01 \nN.ss01 \nO.ss01 \nP.ss01 \nQ.ss01 \nR.ss01 \nS.ss01 \nT.ss01 \nU.ss01 \nV.ss01 \nW.ss01 \nX.ss01 \nY.ss01 \nZ.ss01";
+            name = randomCycle2;
+        },
+                {
+            code = "A.ss02 \nB.ss02 \nC.ss02 \nD.ss02 \nE.ss02 \nF.ss02 \nG.ss02 \nH.ss02 \nI.ss02 \nJ.ss02 \nK.ss02 \nL.ss02 \nM.ss02 \nN.ss02 \nO.ss02\nP.ss02 \nQ.ss02 \nR.ss02 \nS.ss02 \nT.ss02 \nU.ss02 \nV.ss02 \nW.ss02 \nX.ss02 \nY.ss02 \nZ.ss02";
+            name = randomCycle3;
+        }
+    );
+    features =     (
+                {
+            automatic = 1;
+            code = "feature ss01;\nfeature ss02;\nfeature calt;\n";
+            tag = aalt;
+        },
+                {
+            automatic = 1;
+            code = "sub A by A.ss01;\nsub B by B.ss01;\nsub C by C.ss01;\nsub D by D.ss01;\nsub E by E.ss01;\nsub F by F.ss01;\nsub G by G.ss01;\nsub H by H.ss01;\nsub I by I.ss01;\nsub J by J.ss01;\nsub K by K.ss01;\nsub L by L.ss01;\nsub M by M.ss01;\nsub N by N.ss01;\nsub O by O.ss01;\nsub P by P.ss01;\nsub Q by Q.ss01;\nsub R by R.ss01;\nsub S by S.ss01;\nsub T by T.ss01;\nsub U by U.ss01;\nsub V by V.ss01;\nsub W by W.ss01;\nsub X by X.ss01;\nsub Y by Y.ss01;\nsub Z by Z.ss01;\n";
+            labels =             (
+                                {
+                    language = dflt;
+                    value = "";
+                }
+            );
+            notes = "Name: ";
+            tag = ss01;
+        },
+                {
+            automatic = 1;
+            code = "sub A by A.ss02;\nsub B by B.ss02;\nsub C by C.ss02;\nsub D by D.ss02;\nsub E by E.ss02;\nsub F by F.ss02;\nsub G by G.ss02;\nsub H by H.ss02;\nsub I by I.ss02;\nsub J by J.ss02;\nsub K by K.ss02;\nsub L by L.ss02;\nsub M by M.ss02;\nsub N by N.ss02;\nsub O by O.ss02;\nsub P by P.ss02;\nsub Q by Q.ss02;\nsub R by R.ss02;\nsub S by S.ss02;\nsub T by T.ss02;\nsub U by U.ss02;\nsub V by V.ss02;\nsub W by W.ss02;\nsub X by X.ss02;\nsub Y by Y.ss02;\nsub Z by Z.ss02;\n";
+            labels =             (
+                                {
+                    language = dflt;
+                    value = "";
+                }
+            );
+            notes = "Name: ";
+            tag = ss02;
+        },
+                {
+            code = "sub @randomCycle1 @randomCycle1' by @randomCycle2;\nsub @randomCycle2 @randomCycle1' by @randomCycle3;";
+            tag = calt;
+        }
+    );
+    prefixes =     (
+                {
+            automatic = 1;
+            code = "languagesystem DFLT dflt;\n";
+            name = Languagesystems;
+        }
+    );
+}
