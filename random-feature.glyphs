@@ -1,0 +1,265 @@
+{
+.appVersion = "3133";
+.formatVersion = 3;
+axes = (
+{
+name = Weight;
+tag = wght;
+}
+);
+classes = (
+{
+code = "A
+B
+C 
+D 
+E 
+F 
+G 
+H 
+I 
+J 
+K 
+L 
+M 
+N 
+O 
+P 
+Q 
+R 
+S 
+T 
+U 
+V 
+W 
+X 
+Y 
+Z";
+name = randomCycle1;
+},
+{
+code = "A.ss01 
+B.ss01 
+C.ss01 
+D.ss01 
+E.ss01 
+F.ss01 
+G.ss01 
+H.ss01 
+I.ss01 
+J.ss01 
+K.ss01 
+L.ss01 
+M.ss01 
+N.ss01 
+O.ss01 
+P.ss01 
+Q.ss01 
+R.ss01 
+S.ss01 
+T.ss01 
+U.ss01 
+V.ss01 
+W.ss01 
+X.ss01 
+Y.ss01 
+Z.ss01";
+name = randomCycle2;
+},
+{
+code = "A.ss02 
+B.ss02 
+C.ss02 
+D.ss02 
+E.ss02 
+F.ss02 
+G.ss02 
+H.ss02 
+I.ss02 
+J.ss02 
+K.ss02 
+L.ss02 
+M.ss02 
+N.ss02 
+O.ss02
+P.ss02 
+Q.ss02 
+R.ss02 
+S.ss02 
+T.ss02 
+U.ss02 
+V.ss02 
+W.ss02 
+X.ss02 
+Y.ss02 
+Z.ss02";
+name = randomCycle3;
+}
+);
+date = "2019-09-29 21:36:20 +0000";
+familyName = Random;
+featurePrefixes = (
+{
+automatic = 1;
+code = "languagesystem DFLT dflt;
+";
+name = Languagesystems;
+}
+);
+features = (
+{
+automatic = 1;
+code = "feature ss01;
+feature ss02;
+feature calt;
+";
+tag = aalt;
+},
+{
+automatic = 1;
+code = "sub A by A.ss01;
+sub B by B.ss01;
+sub C by C.ss01;
+sub D by D.ss01;
+sub E by E.ss01;
+sub F by F.ss01;
+sub G by G.ss01;
+sub H by H.ss01;
+sub I by I.ss01;
+sub J by J.ss01;
+sub K by K.ss01;
+sub L by L.ss01;
+sub M by M.ss01;
+sub N by N.ss01;
+sub O by O.ss01;
+sub P by P.ss01;
+sub Q by Q.ss01;
+sub R by R.ss01;
+sub S by S.ss01;
+sub T by T.ss01;
+sub U by U.ss01;
+sub V by V.ss01;
+sub W by W.ss01;
+sub X by X.ss01;
+sub Y by Y.ss01;
+sub Z by Z.ss01;
+";
+labels = (
+{
+language = dflt;
+value = "";
+}
+);
+notes = "Name: ";
+tag = ss01;
+},
+{
+automatic = 1;
+code = "sub A by A.ss02;
+sub B by B.ss02;
+sub C by C.ss02;
+sub D by D.ss02;
+sub E by E.ss02;
+sub F by F.ss02;
+sub G by G.ss02;
+sub H by H.ss02;
+sub I by I.ss02;
+sub J by J.ss02;
+sub K by K.ss02;
+sub L by L.ss02;
+sub M by M.ss02;
+sub N by N.ss02;
+sub O by O.ss02;
+sub P by P.ss02;
+sub Q by Q.ss02;
+sub R by R.ss02;
+sub S by S.ss02;
+sub T by T.ss02;
+sub U by U.ss02;
+sub V by V.ss02;
+sub W by W.ss02;
+sub X by X.ss02;
+sub Y by Y.ss02;
+sub Z by Z.ss02;
+";
+labels = (
+{
+language = dflt;
+value = "";
+}
+);
+notes = "Name: ";
+tag = ss02;
+},
+{
+code = "sub @randomCycle1 @randomCycle1' by @randomCycle2;
+sub @randomCycle2 @randomCycle1' by @randomCycle3;";
+tag = calt;
+}
+);
+fontMaster = (
+{
+axesValues = (
+100
+);
+id = "B1069202-75DC-4D0E-9436-97AF17A7CBB7";
+metricValues = (
+{
+pos = 800;
+},
+{
+pos = 700;
+},
+{
+pos = 500;
+},
+{
+},
+{
+pos = -200;
+}
+);
+name = Regular;
+}
+);
+glyphs = (
+);
+instances = (
+{
+axesValues = (
+100
+);
+instanceInterpolations = {
+"B1069202-75DC-4D0E-9436-97AF17A7CBB7" = 1;
+};
+name = Regular;
+}
+);
+kerningLTR = {
+"B1069202-75DC-4D0E-9436-97AF17A7CBB7" = {
+"@MMK_L_A" = {
+"@MMK_R_V" = -50;
+};
+};
+};
+metrics = (
+{
+type = ascender;
+},
+{
+type = "cap height";
+},
+{
+type = "x-height";
+},
+{
+type = baseline;
+},
+{
+type = descender;
+}
+);
+unitsPerEm = 1000;
+versionMajor = 1;
+versionMinor = 0;
+}
