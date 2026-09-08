@@ -388,6 +388,7 @@ class PanelDeAnchos(object):
 		centrar = self.w.centrar.get()
 
 		Glyphs.clearLog()
+		Glyphs.showMacroWindow()
 		print("Fijar mono")
 		print("Fuente: %s   ·   master: %s" % (font.familyName, master.name))
 		print("Ancho: %s   ·   centrado: %s" % (ancho, "si" if centrar else "no"))
@@ -442,6 +443,7 @@ class PanelDeAnchos(object):
 		otros = [m for m in masters if m.id != referencia.id]
 
 		Glyphs.clearLog()
+		Glyphs.showMacroWindow()
 		print("Unificar desde este master")
 		print("Fuente: %s   ·   referencia: %s" % (font.familyName, referencia.name))
 		print("Hacia: %s" % ", ".join(m.name for m in otros))

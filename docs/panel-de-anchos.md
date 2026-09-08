@@ -126,11 +126,11 @@ Con un solo master te avisa y no hace nada.
 5. Si hay que aplanar: seleccionar esos glifos, **usar el más ancho**, **Fijar mono**.
 6. Revisar en la fuente y **guardar tú**.
 
-## Detalle a tener presente
+## Los informes
 
-*Fijar mono* y *Unificar* escriben su informe en el log, pero **no abren la ventana
-de macros solos** (las dos mediciones sí). Si quieres leer el resumen de una
-modificación, deja la ventana de macros abierta antes de apretar el botón.
+Las cuatro operaciones abren la ventana de macros y escriben ahí su informe, así que
+después de apretar cualquier botón tienes el resultado a la vista. Las dos que
+modifican terminan siempre recordándote que el archivo no se guardó.
 
 ## Preferencias
 
