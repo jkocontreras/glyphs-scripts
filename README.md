@@ -34,3 +34,12 @@ Requieren `vanilla` (ya viene enlazada en la carpeta Scripts de Glyphs).
 
 - Los archivos fuente `.glyphs` no viven aquí: están en Dropbox, que ya los versiona.
 - Los scripts de terceros instalados (Cape Weightor, Dirt) quedan fuera del repo.
+
+## Scripts de 2017
+
+En la raíz del repo quedan los scripts sueltos de la primera tanda (2017–2022),
+sin extensión y sin diálogo: *Add sufix to selected glyphs*, *Opentype init*,
+*enable automatic alignment*, *insert anchors in all layers, in position xy*,
+*just print glyph names*, *randomCycles*. Se conservan tal cual.
+
+Licencia: GPL-3.0.

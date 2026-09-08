@@ -1,0 +1,9 @@
+feature init {
+sub @dflt by @init;
+sub @all @init' by @dflt;
+} init;
+
+initial forms - Al igual que la función isol, init está enfocada al árabe y así mismo puede ser útil para las fuentes latinas para aprovechar el contexto. En el ejemplo @all reúne todos los caráctertes de la fuente (al hablar de todos no se incluyen notdef, null ni el espacio), @init incluye los carácteres que han sido modificados para el inicio de palabras y en @dflt están aquellos carácteres regulares que habrán de ser reemplazados.
+Software que la soporta: InDesign
+ 
+Ejemplo:
