@@ -63,6 +63,33 @@ subiéndolo empiezas a ver la retícula real de la fuente. Tiene que ser 1 o má
 Es la herramienta de diagnóstico: no toca nada, solo te dice qué tan pareja está
 la fuente antes de que decidas un valor para *Fijar mono*.
 
+### El mapa: picos a la izquierda, glifos a la derecha
+
+Medir también llena las dos tablas del centro de la ventana, que es donde se
+trabaja de verdad.
+
+**Izquierda — los picos.** Un renglón por pico, con cuántos glifos tiene el grupo
+y cuántos colapsarían hacia él. Están los picos de todos los grupos, también los
+anchos aislados (colapsan 0), así que la lista es el paisaje completo de anchos
+del master, ordenado del más poblado al menos. El punto marca los grupos que
+tienen algo que revisar.
+
+**Derecha — los glifos de ese pico.** Al elegir un pico aparecen sus desviados
+**dibujados**, con el nombre, su ancho, la diferencia en puntos y el pico hacia
+el que irían. La miniatura sale de la capa del master elegido, así que estás
+mirando el dibujo real, no un carácter de sistema. *Incluir los del pico* suma
+los que ya están bien, para comparar.
+
+Debajo, tres formas de sacar el grupo del panel:
+
+- **Copiar nombres** — al portapapeles, uno por línea; sirve para un List Filter.
+- **Seleccionar** — los marca en la ventana de fuente, para etiquetarlos con color.
+- **Abrir en pestaña** — los abre en una pestaña de edición, dibujados y con su
+  avance real, que es donde se corrigen.
+
+Los tres trabajan sobre las filas que tengas marcadas a la derecha; si no marcas
+ninguna, sobre todas las del grupo. Nada de esto modifica la fuente.
+
 ### Comparar masters
 
 Contesta: *¿dónde se me rompió el Uniwidth?*
