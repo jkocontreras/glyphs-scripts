@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+__MACOSX/
+*.zip
+# los archivos fuente viven en Dropbox, no aquí
+*.glyphs
+*.glyphspackage
