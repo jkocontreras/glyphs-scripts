@@ -19,6 +19,8 @@ Todo respeta el alcance (toda la fuente / seleccionados) y, cuando
 corresponde, el master elegido arriba.
 """
 
+import textwrap
+
 import vanilla
 from GlyphsApp import Glyphs, Message
 
@@ -286,32 +288,74 @@ class PanelDeAnchos(object):
 		colapsables = {c: ms for c, ms in grupos.items() if len(ms) > 1}
 		solos = {c: ms for c, ms in grupos.items() if len(ms) == 1}
 
+		# Cuentas del resumen: lo que importa es cuantos glifos hay que tocar.
+		medidos = sum(len(nombres) for nombres in conteo.values())
+		desviados = {}
+		for c, miembros in colapsables.items():
+			for w in miembros:
+				if w != c:
+					desviados[w] = c
+		glifosDesviados = sum(len(conteo[w]) for w in desviados)
+		anchosEnGrupos = sum(len(ms) for ms in colapsables.values())
+
+		alcance = "toda la fuente" if self.w.alcance.get() == 0 else "los seleccionados"
+
 		Glyphs.clearLog()
 		Glyphs.showMacroWindow()
-		print("Similares en el master -- %s / %s" % (font.familyName or "sin nombre", master.name))
-		print("Distancia maxima: %i pts" % limite)
-		print("=" * 60)
-
-		if colapsables:
-			print("Grupos con anchos parecidos (candidatos a un valor comun):")
-			orden = sorted(colapsables, key=lambda c: -sum(len(conteo[w]) for w in colapsables[c]))
-			for c in orden:
-				miembros = sorted(colapsables[c])
-				total = sum(len(conteo[w]) for w in miembros)
-				print("")
-				print("  pico %i  (%i glifos en el grupo)" % (c, total))
-				for w in miembros:
-					marca = "   <- pico" if w == c else ""
-					print("      %i pts : %i glifos%s" % (w, len(conteo[w]), marca))
-		else:
-			print("No hay anchos parecidos dentro de %i pts." % limite)
-
+		print("SIMILARES EN EL MASTER -- %s / %s" % (font.familyName or "sin nombre", master.name))
+		print("Alcance: %s   ·   distancia maxima: %i pts" % (alcance, limite))
+		print("=" * 72)
 		print("")
-		print("=" * 60)
-		print("Anchos distintos: %i    Grupos colapsables: %i" % (len(conteo), len(colapsables)))
+		print("  Glifos medidos                  %i" % medidos)
+		print("  Anchos distintos                %i" % len(conteo))
+		if colapsables:
+			print("  Anchos que se pueden juntar     %i, repartidos en %i grupos" % (anchosEnGrupos, len(colapsables)))
+			print("")
+			print("  GLIFOS A REVISAR                %i" % glifosDesviados)
+			print("  (los que no estan en el ancho mas poblado de su grupo)")
+		else:
+			print("")
+			print("  No hay anchos parecidos dentro de %i pts: nada que juntar." % limite)
+
 		if solos:
 			sueltos = sorted(solos.keys())
-			print("Anchos sin vecinos cercanos: %s" % ", ".join(str(w) for w in sueltos))
+			print("")
+			print("  Anchos aislados (sin ningun vecino a menos de %i pts): %i" % (limite, len(sueltos)))
+			print(textwrap.fill(
+				", ".join(str(w) for w in sueltos),
+				width=72,
+				initial_indent="    ",
+				subsequent_indent="    ",
+			))
+
+		if not colapsables:
+			return
+
+		print("")
+		print("=" * 72)
+		print("GRUPO POR GRUPO")
+		print("El pico es el ancho con mas glifos; debajo van los que se le parecen,")
+		print("con su diferencia en puntos y los glifos que hay que revisar.")
+
+		orden = sorted(colapsables, key=lambda c: -sum(len(conteo[w]) for w in colapsables[c]))
+		for i, c in enumerate(orden, 1):
+			miembros = sorted(colapsables[c])
+			total = sum(len(conteo[w]) for w in miembros)
+			aRevisar = sum(len(conteo[w]) for w in miembros if w != c)
+			print("")
+			print("-" * 72)
+			print("%i.  pico %i pts   ·   %i glifos en el grupo   ·   %i a revisar" % (i, c, total, aRevisar))
+			for w in miembros:
+				if w == c:
+					print("      %5i         %4i glifos   pico" % (w, len(conteo[w])))
+					continue
+				prefijo = "      %5i  %+4i   %4i glifos   " % (w, w - c, len(conteo[w]))
+				print(textwrap.fill(
+					", ".join(sorted(conteo[w])),
+					width=86,
+					initial_indent=prefijo,
+					subsequent_indent=" " * len(prefijo),
+				))
 
 	def compararMasters(self, sender):
 		font = self.fuente()
