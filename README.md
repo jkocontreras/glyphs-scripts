@@ -37,9 +37,21 @@ Requieren `vanilla` (ya viene enlazada en la carpeta Scripts de Glyphs).
 
 ## Scripts de 2017
 
-En la raíz del repo quedan los scripts sueltos de la primera tanda (2017–2022),
-sin extensión y sin diálogo: *Add sufix to selected glyphs*, *Opentype init*,
-*enable automatic alignment*, *insert anchors in all layers, in position xy*,
-*just print glyph names*, *randomCycles*. Se conservan tal cual.
+La primera tanda (2017–2022) también vive en `Scripts/`, con la extensión `.py`
+que les faltaba. Son de una línea y sin diálogo:
+
+- `Add sufix to selected glyphs.py`
+- `enable automatic alignment.py`
+- `insert anchors in all layers, in position xy.py`
+- `just print glyph names.py`
+
+Tres de ellos están escritos en Python 2 (`print` sin paréntesis) y fallan tal
+cual en Glyphs 3; el único que corre hoy es *insert anchors in all layers*.
+
+## features/
+
+Lo que no es script y estaba suelto en la raíz: `Opentype init` (código de una
+feature `init`), `randomCycles` (un plist con clases y features) y el archivo de
+prueba `random-feature.glyphs`.
 
 Licencia: GPL-3.0.
